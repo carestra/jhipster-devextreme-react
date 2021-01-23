@@ -68,7 +68,9 @@ module.exports = options => ({
       {
         enforce: 'pre',
         test: /\.jsx?$/,
-        loader: 'source-map-loader'
+        loader: 'source-map-loader',
+        // Excludes rrule from the source-map-loader
+        exclude: /(node_modules\/rrule)/
       },
       {
         test: /\.(j|t)sx?$/,
