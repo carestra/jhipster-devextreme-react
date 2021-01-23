@@ -1,5 +1,7 @@
 import 'react-toastify/dist/ReactToastify.css';
 import './app.scss';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
 
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
