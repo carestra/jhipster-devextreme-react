@@ -9,6 +9,15 @@
         "main": "Entities",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
+      "activities": {
+        "main": "Activities",
+        "activity": {
+          "booking": "Booking"
+        },
+        "manage": {
+          "activity": "Activity"
+        }
+      },
       "account": {
         "main": "Account",
         "settings": "Settings",
