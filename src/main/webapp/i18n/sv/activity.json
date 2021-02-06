@@ -1,0 +1,25 @@
+{
+  "pacificApp": {
+    "activity": {
+      "home": {
+        "title": "Activities",
+        "createLabel": "Skapa en ny Activity",
+        "createOrEditLabel": "Skapa eller ändra en Activity",
+        "notFound": "No Activities found"
+      },
+      "created": "En ny Activity är skapad med id {{ param }}",
+      "updated": "En Activity är uppdaterad med id  {{ param }}",
+      "deleted": "En Activity är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Activity {{ id }}?"
+      },
+      "detail": {
+        "title": "Activity"
+      },
+      "title": "Title",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "recurrenceRule": "Recurrence Rule"
+    }
+  }
+}

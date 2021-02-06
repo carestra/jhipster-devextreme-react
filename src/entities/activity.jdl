@@ -1,0 +1,7 @@
+entity Activity {
+	id String,
+    title String,
+	startDate Instant,
+    endDate Instant,
+    recurrenceRule String
+}
