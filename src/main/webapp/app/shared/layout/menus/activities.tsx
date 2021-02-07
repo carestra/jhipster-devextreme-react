@@ -17,12 +17,12 @@ export const ActivitiesMenu = (props: IActivitiesMenuProps) => {
       id="activity-menu"
       style={{maxHeight: '80vh', overflow: 'auto'}}
     >
-      <MenuItem icon="asterisk" to="/activity/member/booking">
+      <MenuItem icon="asterisk" to="/activities/member/booking">
         <Translate contentKey="global.menu.activities.activity.booking"/>
       </MenuItem>
       {
         isAdmin &&
-        <MenuItem icon="asterisk" to="/activity/manager/calendar">
+        <MenuItem icon="asterisk" to="/activities/manager/calendar">
           <Translate contentKey="global.menu.activities.manage.activity"/>
         </MenuItem>
       }

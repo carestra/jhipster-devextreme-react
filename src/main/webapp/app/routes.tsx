@@ -19,7 +19,7 @@ const Admin = Loadable({
 const Routes = () => (
   <div className="view-routes">
     <Switch>
-      <PrivateRoute path="/activity" component={Activity} hasAnyAuthorities={[AUTHORITIES.USER]} />
+      <PrivateRoute path="/activities" component={Activity} hasAnyAuthorities={[AUTHORITIES.USER]} />
       <PrivateRoute path="/admin" component={Admin} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />
       <ErrorBoundaryRoute path="/" exact component={Home} />
