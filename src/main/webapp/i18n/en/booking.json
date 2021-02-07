@@ -1,0 +1,27 @@
+{
+  "pacificApp": {
+    "booking": {
+      "home": {
+        "title": "Bookings",
+        "createLabel": "Create a new Booking",
+        "createOrEditLabel": "Create or edit a Booking",
+        "notFound": "No Bookings found"
+      },
+      "created": "A new Booking is created with identifier {{ param }}",
+      "updated": "A Booking is updated with identifier {{ param }}",
+      "deleted": "A Booking is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Booking {{ id }}?"
+      },
+      "detail": {
+        "title": "Booking"
+      },
+      "status": "Status",
+      "activityTitle": "Activity Title",
+      "activityDate": "Activity Date",
+      "activityId": "Activity Id",
+      "attendeeId": "Attendee Id",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}

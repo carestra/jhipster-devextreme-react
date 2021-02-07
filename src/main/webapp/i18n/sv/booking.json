@@ -1,0 +1,27 @@
+{
+  "pacificApp": {
+    "booking": {
+      "home": {
+        "title": "Bookings",
+        "createLabel": "Skapa en ny Booking",
+        "createOrEditLabel": "Skapa eller ändra en Booking",
+        "notFound": "No Bookings found"
+      },
+      "created": "En ny Booking är skapad med id {{ param }}",
+      "updated": "En Booking är uppdaterad med id  {{ param }}",
+      "deleted": "En Booking är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Booking {{ id }}?"
+      },
+      "detail": {
+        "title": "Booking"
+      },
+      "status": "Status",
+      "activityTitle": "Activity Title",
+      "activityDate": "Activity Date",
+      "activityId": "Activity Id",
+      "attendeeId": "Attendee Id",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}

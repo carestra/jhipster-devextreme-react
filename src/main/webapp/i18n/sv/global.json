@@ -8,6 +8,7 @@
       "entities": {
         "main": "Entiter",
         "activity": "Activity",
+        "booking": "Booking",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

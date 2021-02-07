@@ -1,0 +1,9 @@
+entity Booking {
+	id String,
+    status String,
+	activityTitle String,
+    activityDate Instant,
+    activityId String,
+    attendeeId String,
+    lastModifiedDate Instant
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Booking",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activityTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activityDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "activityId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "attendeeId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModifiedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210207152646",
+  "entityTableName": "booking",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

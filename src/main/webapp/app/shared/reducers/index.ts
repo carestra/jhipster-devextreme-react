@@ -11,6 +11,10 @@ import userManagement, { UserManagementState } from './user-management';
 import activity, {
   ActivityState
 } from 'app/entities/activity/activity.reducer';
+// prettier-ignore
+import booking, {
+  BookingState
+} from 'app/entities/booking/booking.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -20,6 +24,7 @@ export interface IRootState {
   readonly administration: AdministrationState;
   readonly userManagement: UserManagementState;
   readonly activity: ActivityState;
+  readonly booking: BookingState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -31,6 +36,7 @@ const rootReducer = combineReducers<IRootState>({
   administration,
   userManagement,
   activity,
+  booking,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });

@@ -6,32 +6,30 @@ import { Translate, ICrudGetAllAction, TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
-import { getEntities } from './activity.reducer';
-import { IActivity } from 'app/shared/model/activity.model';
+import { getEntities } from './booking.reducer';
+import { IBooking } from 'app/shared/model/booking.model';
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 
-export interface IActivityProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
+export interface IBookingProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
 
-export const Activity = (props: IActivityProps) => {
+export const Booking = (props: IBookingProps) => {
   useEffect(() => {
     props.getEntities();
   }, []);
 
-  window.console.log("####");
-
-  const { activityList, match, loading } = props;
+  const { bookingList, match, loading } = props;
   return (
     <div>
-      <h2 id="activity-heading">
-        <Translate contentKey="pacificApp.activity.home.title">Activities</Translate>
+      <h2 id="booking-heading">
+        <Translate contentKey="pacificApp.booking.home.title">Bookings</Translate>
         <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
           <FontAwesomeIcon icon="plus" />
           &nbsp;
-          <Translate contentKey="pacificApp.activity.home.createLabel">Create new Activity</Translate>
+          <Translate contentKey="pacificApp.booking.home.createLabel">Create new Booking</Translate>
         </Link>
       </h2>
       <div className="table-responsive">
-        {activityList && activityList.length > 0 ? (
+        {bookingList && bookingList.length > 0 ? (
           <Table responsive>
             <thead>
               <tr>
@@ -39,47 +37,57 @@ export const Activity = (props: IActivityProps) => {
                   <Translate contentKey="global.field.id">ID</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="pacificApp.activity.title">Title</Translate>
+                  <Translate contentKey="pacificApp.booking.status">Status</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="pacificApp.activity.startDate">Start Date</Translate>
+                  <Translate contentKey="pacificApp.booking.activityTitle">Activity Title</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="pacificApp.activity.endDate">End Date</Translate>
+                  <Translate contentKey="pacificApp.booking.activityDate">Activity Date</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="pacificApp.activity.recurrenceRule">Recurrence Rule</Translate>
+                  <Translate contentKey="pacificApp.booking.activityId">Activity Id</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="pacificApp.booking.attendeeId">Attendee Id</Translate>
+                </th>
+                <th>
+                  <Translate contentKey="pacificApp.booking.lastModifiedDate">Last Modified Date</Translate>
                 </th>
                 <th />
               </tr>
             </thead>
             <tbody>
-              {activityList.map((activity, i) => (
+              {bookingList.map((booking, i) => (
                 <tr key={`entity-${i}`}>
                   <td>
-                    <Button tag={Link} to={`${match.url}/${activity.id}`} color="link" size="sm">
-                      {activity.id}
+                    <Button tag={Link} to={`${match.url}/${booking.id}`} color="link" size="sm">
+                      {booking.id}
                     </Button>
                   </td>
-                  <td>{activity.title}</td>
-                  <td>{activity.startDate ? <TextFormat type="date" value={activity.startDate} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{activity.endDate ? <TextFormat type="date" value={activity.endDate} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{activity.recurrenceRule}</td>
+                  <td>{booking.status}</td>
+                  <td>{booking.activityTitle}</td>
+                  <td>{booking.activityDate ? <TextFormat type="date" value={booking.activityDate} format={APP_DATE_FORMAT} /> : null}</td>
+                  <td>{booking.activityId}</td>
+                  <td>{booking.attendeeId}</td>
+                  <td>
+                    {booking.lastModifiedDate ? <TextFormat type="date" value={booking.lastModifiedDate} format={APP_DATE_FORMAT} /> : null}
+                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
-                      <Button tag={Link} to={`${match.url}/${activity.id}`} color="info" size="sm">
+                      <Button tag={Link} to={`${match.url}/${booking.id}`} color="info" size="sm">
                         <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.view">View</Translate>
                         </span>
                       </Button>
-                      <Button tag={Link} to={`${match.url}/${activity.id}/edit`} color="primary" size="sm">
+                      <Button tag={Link} to={`${match.url}/${booking.id}/edit`} color="primary" size="sm">
                         <FontAwesomeIcon icon="pencil-alt" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.edit">Edit</Translate>
                         </span>
                       </Button>
-                      <Button tag={Link} to={`${match.url}/${activity.id}/delete`} color="danger" size="sm">
+                      <Button tag={Link} to={`${match.url}/${booking.id}/delete`} color="danger" size="sm">
                         <FontAwesomeIcon icon="trash" />{' '}
                         <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.delete">Delete</Translate>
@@ -94,7 +102,7 @@ export const Activity = (props: IActivityProps) => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="pacificApp.activity.home.notFound">No Activities found</Translate>
+              <Translate contentKey="pacificApp.booking.home.notFound">No Bookings found</Translate>
             </div>
           )
         )}
@@ -103,9 +111,9 @@ export const Activity = (props: IActivityProps) => {
   );
 };
 
-const mapStateToProps = ({ activity }: IRootState) => ({
-  activityList: activity.entities,
-  loading: activity.loading,
+const mapStateToProps = ({ booking }: IRootState) => ({
+  bookingList: booking.entities,
+  loading: booking.loading,
 });
 
 const mapDispatchToProps = {
@@ -115,4 +123,4 @@ const mapDispatchToProps = {
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Activity);
+export default connect(mapStateToProps, mapDispatchToProps)(Booking);
