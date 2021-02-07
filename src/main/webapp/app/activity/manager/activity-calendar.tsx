@@ -47,7 +47,7 @@ export const ActivityCalendar = (props: IActivityCalendarProp) => {
 
   const {account, activityEntities} = props;
 
-  const views = ["day", "week", "agenda"];
+  const views = ["day", "week", "agenda", 'month'];
   const scrolling: dxSchedulerScrolling = { mode: 'virtual' };
 
   const mapToJson = delta => JSON
@@ -111,6 +111,11 @@ export const ActivityCalendar = (props: IActivityCalendarProp) => {
               defaultCurrentView="week"
               views={views as any}
               scrolling={scrolling}
+              startDayHour={7}
+              endDayHour={23}
+              cellDuration={60}
+              firstDayOfWeek={1}
+              shadeUntilCurrentTime={true}
             />) : (
             <div>
               <Alert color="warning">
