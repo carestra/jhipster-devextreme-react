@@ -21,6 +21,8 @@ import {
   getEntity,
   updateEntity
 } from "app/entities/activity/activity.reducer";
+import {Button} from "devextreme-react";
+import notify from "devextreme/ui/notify";
 
 export interface IActivityBookingProp extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {
 }
@@ -94,6 +96,49 @@ const ActivityBooking = (props: IActivityBookingProp) => {
     })
   }
 
+  function Appointment(model) {
+    const { appointmentData } = model.data;
+
+    function okClicked(e) {
+      notify('The OK button was clicked');
+    }
+
+    return (
+      <div className="showtime-preview">
+        <div> {appointmentData.text}
+
+          <Button
+            text="OK"
+            onClick={okClicked}
+          />
+        </div>
+        <div>
+          {appointmentData.startDate}
+          {' - '}
+          {appointmentData.endDate }
+        </div>
+      </div>
+    );
+  }
+
+  function preventOpenComponent(e) {
+    e.cancel = true;
+  }
+
+  function openBookingTooltip(e) {
+    e.cancel = true;
+
+    const appointmentData = e.appointmentData;
+
+    return (
+      <div>
+        <div>
+          {appointmentData.text}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <Row>
       <Col md="9">
@@ -116,6 +161,9 @@ const ActivityBooking = (props: IActivityBookingProp) => {
               cellDuration={60}
               firstDayOfWeek={1}
               shadeUntilCurrentTime={true}
+              onAppointmentDblClick={preventOpenComponent}
+              onCellClick={preventOpenComponent}
+              onAppointmentClick={openBookingTooltip}
             />) : (
             <div>
               <Alert color="warning">
